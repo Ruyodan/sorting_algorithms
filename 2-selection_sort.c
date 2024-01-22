@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "sort.h"
 
 /**
  * swap_ints - Swap two integers in an array.
@@ -42,43 +42,4 @@ void selection_sort(int *array, size_t size)
 			print_array(array, size);
 		}
 	}
-}
-
-/**
- * print_array - Prints an array of integers.
- * @array: The array of integers to be printed.
- * @size: The size of the array.
- */
-void print_array(const int *array, size_t size)
-{
-	size_t i;
-
-	for (i = 0; i < size; i++)
-	{
-		if (i)
-			printf(", ");
-		printf("%d", array[i]);
-	}
-	printf("\n");
-}
-
-/**
- * main - Entry point of the program.
- *
- * Return: Always 0.
- */
-int main(void)
-{
-	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-	size_t n = sizeof(array) / sizeof(array[0]);
-
-	printf("Original array: ");
-	print_array(array, n);
-
-	selection_sort(array, n);
-
-	printf("Sorted array: ");
-	print_array(array, n);
-
-	return (0);
 }

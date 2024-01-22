@@ -1,6 +1,7 @@
 # C - Sorting algorithms & Big O
 # This file lists all individuals having contributed content to the repository by :
 HAMDOUNE Redouane - Ruyodan
+
 Irbaine Mohamed Amine - Irbaine
 
 
