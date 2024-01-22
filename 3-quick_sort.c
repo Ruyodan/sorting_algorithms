@@ -7,9 +7,9 @@
  */
 void swap_ints(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
 /**
@@ -23,28 +23,28 @@ void swap_ints(int *a, int *b)
  */
 size_t lomuto_partition(int *array, size_t low, size_t high, size_t size)
 {
-    int pivot = array[high];
-    size_t i = (low - 1);
+	int pivot = array[high];
+	size_t i = (low - 1);
 
-    for (size_t j = low; j <= high - 1; j++)
-    {
-        if (array[j] <= pivot)
-        {
-            i++;
-            swap_ints(&array[i], &array[j]);
-            if (array[i] != array[j])
-                print_array(array, size);
-        }
-    }
-    swap_ints(&array[i + 1], &array[high]);
-    if (array[i + 1] != array[high])
-        print_array(array, size);
+	for (size_t j = low; j <= high - 1; j++)
+	{
+		if (array[j] <= pivot)
+		{
+			i++;
+			swap_ints(&array[i], &array[j]);
+			if (array[i] != array[j])
+				print_array(array, size);
+		}
+	}
+	swap_ints(&array[i + 1], &array[high]);
+	if (array[i + 1] != array[high])
+		print_array(array, size);
 
-   	 return (i + 1);
+	return (i + 1);
 }
 
 /**
- * lomuto_sort - Sort an array of integers in ascending order using the Quick sort algorithm.
+ * lomuto_sort - That Fanctions of sorts order using the Quick sort algorithm.
  * @array: The array to sort.
  * @low: The starting index of the partition.
  * @high: The ending index of the partition.
@@ -52,25 +52,24 @@ size_t lomuto_partition(int *array, size_t low, size_t high, size_t size)
  */
 void lomuto_sort(int *array, size_t low, size_t high, size_t size)
 {
-	    if (low < high)
-    {
-        	size_t pi = lomuto_partition(array, low, high, size);
+	if (low < high)
+	{
+		size_t pi = lomuto_partition(array, low, high, size);
 
-        	lomuto_sort(array, low, pi - 1, size);
-        	lomuto_sort(array, pi + 1, high, size);
-    }
+		lomuto_sort(array, low, pi - 1, size);
+		lomuto_sort(array, pi + 1, high, size);
+	}
 }
 
 /**
- * quick_sort - Sort an array of integers in ascending order using the Quick sort algorithm.
+ * quick_sort - That fanctions of sorts order using the Quick sort algorithm.
  * @array: The array to sort.
  * @size: The size of the array.
  */
 void quick_sort(int *array, size_t size)
 {
-    	if (array == NULL || size < 2)
-	return;
+	if (array == NULL || size < 2)
+		return;
 
 	lomuto_sort(array, 0, size - 1, size);
 }
-
